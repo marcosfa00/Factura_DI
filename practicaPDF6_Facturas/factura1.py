@@ -28,7 +28,7 @@ class Factura:
     def __init__(self):
         #inicializando estilos y elementos del docuemnto
         self.hojaEstilo = getSampleStyleSheet()
-        self. elementosDoc = []
+        self.elementosDoc = []
 
         #elementos necesarios para construir una factura
         #se programarán en funciones a continuacion
