@@ -46,6 +46,8 @@ class Factura2:
         self.Titulo()
         self.datosFacturacion()
         self.tablaPedidos()
+        self.metodoDePAgo()
+        self.Gracias()
 
         # construimos el documento FACTURA
         self.documento = SimpleDocTemplate('factura2.pdf', pagesize=A4)
@@ -69,6 +71,7 @@ class Factura2:
 
         tabla = Table(data=elementos, style=estilo, colWidths=250, rowHeights=50)
         self.elementosDoc.append(tabla)
+        self.elementosDoc.append(Spacer(0, 40))
 
     def datosFacturacion(self):
         print("Por favor, ingrese los siguientes datos de facturación:")
@@ -105,6 +108,7 @@ class Factura2:
         estilo = [
             # Color de la letra (inicio columna, inicio fila), (fin columna, fin fila), color
             ("BACKGROUND", (0, 0), (-1, -1), colors.lightgrey),
+            ("FONTSIZE",(3,0),(-2,0),18)
 
         ]
         tabla = Table(data=elementos, style=estilo, colWidths=125)
@@ -125,9 +129,76 @@ class Factura2:
             ("GRID", (0, 0), (-1, -1), 1, colors.black),
             ("BACKGROUND", (0, 0), (-1, 0), colors.lightgrey),
         ]
-        tabla = Table(data=elementos, style=estilo, colWidths=[50,120,90,90,90,100])
+        tabla = Table(data=elementos, style=estilo, colWidths=[50,135,70,70,70,100])
         self.elementosDoc.append(Spacer(0, 40))
         self.elementosDoc.append(tabla)
+
+
+    def metodoDePAgo(self):
+        elementos_tablaPago = [
+            ["Métodos de pago:",""],
+        ]
+
+        estilo_tablaPago = [
+            # estilo , (inicio columna, inicio fila), (fin columna, fin fila), color
+            ("BOX", (0, 0), (-1, -1), 1, colors.black),
+
+            ("VALIGN", (0, 0), (-1, -1), "TOP")
+
+        ]
+        tabla1 = Table(data=elementos_tablaPago, style=estilo_tablaPago, colWidths=100, rowHeights=80)
+
+        elementos_TablaImporte = [
+            ["importe neto",""],
+            ["IVA%",""],
+            ["IRPF%",""],
+            ["IMPORTE BRUTO",""],
+        ]
+
+        estilo_TablaImporte = [
+            # estilo , (inicio columna, inicio fila), (fin columna, fin fila), color
+            ("GRID", (0, 0), (-1, -1), 1, colors.black),
+            ("INNERGRID", (0, 0), (-1, -1), 1, colors.lightgrey),
+            ("BACKGROUND",(0,3),(-1,-1),colors.lightgrey),
+            # vertical align
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE")
+
+
+        ]
+
+        tabla2 = Table(data=elementos_TablaImporte, style=estilo_TablaImporte, colWidths=[100,50], rowHeights=[20,20,20,40])
+
+        elementos = [
+            [tabla1,"",tabla2]
+        ]
+
+        estilo= [
+            ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            # align hacia la izquierda
+            ("ALIGN", (0, 0), (0, -1), "LEFT"),
+            # align hacia la derecha
+            ("ALIGN", (-1, 0), (-1, -1), "RIGHT"),
+        ]
+        tablaFinal = Table(data=elementos, style=estilo, colWidths=[100,300,100])
+        self.elementosDoc.append(Spacer(0, 40))
+        self.elementosDoc.append(tablaFinal)
+
+
+    def Gracias(self):
+        elementos_Gracias = [
+            ["Gracias por su confianza.",""],
+            ["Atentamente,",""]
+        ]
+
+        estilo = [
+            # align hacia la derecha
+            ("ALIGN", (-1, 0), (-1, -1), "LEFT"),
+
+        ]
+        table = Table(data=elementos_Gracias, style=estilo, colWidths=[200,300], rowHeights=50)
+        self.elementosDoc.append(table)
+
+
 
 
 
