@@ -83,28 +83,15 @@ class Factura2:
         direccion = input("5. Codigo Postal/Ciudad: ")
         fecha = input("6. Fecha de Factura: ")
         print("Datos de facturación ingresados correctamente.")
-
-        estiloTextos = self.hojaEstilo["BodyText"]
-
-        cliente_text = Paragraph("<b>{}</b>".format(cliente), style=estiloTextos)
-        ciudad_pais_text = Paragraph("<b>{}</b>".format(ciudad_pais), style=estiloTextos)
-        cif_nif_text = Paragraph("<b>{}</b>".format(cif_nif), style=estiloTextos)
-        direccion_text = Paragraph("<b>{}</b>".format(direccion), style=estiloTextos)
-        fecha_text = Paragraph("<b>{}</b>".format(fecha), style=estiloTextos)
-
-
         elementos = [
-            # TITULO DE LA TABLA
-            [Paragraph("FACTURAR A:", estiloTextos), "",Paragraph("Nº DE FACTURA", estiloTextos),""],
-            # DATOS:
-            [Paragraph("Cliente:", estiloTextos), cliente_text,Paragraph("Fecha de Factura:", estiloTextos), fecha_text],
-            [Paragraph("Ciudad y País:", estiloTextos), ciudad_pais_text,Paragraph("Nº DE PEDIDO", estiloTextos)],
-            [Paragraph("Codigo Postal/Ciudad:", estiloTextos), direccion_text,Paragraph("Fecha de Vencimiento", estiloTextos)],
-            [Paragraph("CIF/NIF:", estiloTextos), cif_nif_text,Paragraph("Condiciones de Pago", estiloTextos)],
-
-
-            # Añade más filas según sea necesario
+            ["FACTURAR A:", "", "Nº DE FACTURA", ""],
+            ["Cliente:", cliente, "Fecha de Factura:", fecha],
+            ["Ciudad y País:", ciudad_pais, "Nº DE PEDIDO", ""],
+            ["Codigo Postal/Ciudad:", direccion, "Fecha de Vencimiento", ""],
+            ["CIF/NIF:", cif_nif, "Condiciones de Pago", ""],
         ]
+
+
         estilo = [
             # Color de la letra (inicio columna, inicio fila), (fin columna, fin fila), color
             ("BACKGROUND", (0, 0), (-1, -1), colors.lightgrey),
