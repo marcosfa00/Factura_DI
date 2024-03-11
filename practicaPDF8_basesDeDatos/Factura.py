@@ -91,12 +91,16 @@ class Factura:
             ["POS", "CONCEPTO/DESCRPICION", "CANTIDAD", "UNIDAD", "PRECIO ", "IMPORTE"],
 
         ]
+        self.importe = 0
+        self.importeTotal = 0
         # total = float(self.precioUnitario) * 21 / 100
         for elementos in self.selectedData:
             print(elementos)
-            elementos
+
             array = list(elementos)
-            array.append( float(elementos[4]) * 21/100)
+            self.importe = float(elementos[3])
+            self.importeTotal += self.importe * 21/100
+            array.append(self.importe * 21/100)
 
             elementosInvoice.append(array)
 
@@ -121,12 +125,18 @@ class Factura:
 
         ]
         tabla1 = Table(data=elementos_tablaPago, style=estilo_tablaPago, colWidths=100, rowHeights=80)
+        self.importeNeto = 0
+        for elementos in self.selectedData:
+            self.importe = float(elementos[3])
+            self.importeNeto += self.importe
 
+        self.importeTotal += self.importeTotal *33/100
+        self.importeTotal = round(self.importeTotal,2)
         elementos_TablaImporte = [
-            ["importe neto", ""],
-            ["IVA%", ""],
-            ["IRPF%", ""],
-            ["IMPORTE BRUTO", ""],
+            ["importe neto", self.importeNeto],
+            ["IVA%", "21"],
+            ["IRPF%", "33"],
+            ["IMPORTE BRUTO", self.importeTotal],
         ]
 
         estilo_TablaImporte = [
