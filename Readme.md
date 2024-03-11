@@ -47,3 +47,5 @@ python factura_generator.py
 ```
 
 El script creará un archivo PDF con la factura y mostrará un mensaje indicando que la factura ha sido creada. Este proyecto es altamente personalizable y puede adaptarse fácilmente a diferentes necesidades de facturación.
+
+Marcos Avendaño

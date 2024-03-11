@@ -1,9 +1,7 @@
 import sys
-from PyQt6.QtCore import QSize, Qt
-from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QGridLayout, QVBoxLayout, QHBoxLayout, QWidget,
-                             QLabel, QListWidget, QPushButton, QComboBox,  QLineEdit,
-                             QRadioButton, QGroupBox, QTableView)
+                             QLabel, QPushButton, QComboBox, QLineEdit,
+                             QGroupBox, QTableView)
 
 from conexionBD import ConexionBD
 from modeloTaboa import ModeloTaboa
@@ -13,6 +11,16 @@ from Factura import Factura
 class FiestraPrincipal (QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.codigoProducto =0
+        self.nAlbaran= 0
+        self.cantidade = 0
+        self.precioUnitario =0
+        self.numeroLalbaran =0
+
+        self.selected_data = []
+
+
 
         self.setWindowTitle("Exame 20-02-2024")
 
@@ -45,6 +53,8 @@ class FiestraPrincipal (QMainWindow):
         btnEditar = QPushButton("Editar")
         btnBorrar = QPushButton("Borrar")
         btnBorrar.clicked.connect(self.on_btnBorrar_clicked)
+        btnImprimir = QPushButton("Imprimir")
+        btnImprimir.clicked.connect(lambda: self.crearFactura("FACTURA PROFORMA",self.cmbNumeroAlbara.currentText(),self.txtDataAlbara.text(),self.txtDataEntrega.text(),self.txtNumeroCliente.text()))
 
         btnAceptar = QPushButton("Aceptar")
         btnCancelar = QPushButton("Cancelar")
@@ -71,6 +81,8 @@ class FiestraPrincipal (QMainWindow):
         cajaH.addWidget(btnEngadir)
         cajaH.addWidget(btnEditar)
         cajaH.addWidget(btnBorrar)
+        cajaH.addWidget(btnImprimir)
+
 
         cajaV.addLayout(cajaH)
 
@@ -80,9 +92,8 @@ class FiestraPrincipal (QMainWindow):
         # to select the entire row
         self.tablaDetalleAlbara.setSelectionBehavior(QTableView.SelectionBehavior.SelectRows)
         # to select only one row
-        self.tablaDetalleAlbara.setSelectionMode(QTableView.SelectionMode.SingleSelection)
-        # to do the selection
-        self.selection = self.tablaDetalleAlbara.selectionModel()
+        self.tablaDetalleAlbara.setSelectionMode(QTableView.SelectionMode.MultiSelection)#cambiamos sigle selection por multi selection
+
 
         # implementacion medida de usuabilidade
         self.headerData = self.obtenerNombreColumnas()
@@ -102,6 +113,10 @@ class FiestraPrincipal (QMainWindow):
         container.setLayout(cajaV)
 
         self.cambiarDatosAlbara()
+
+        # to do the selection
+        self.selection = self.tablaDetalleAlbara.selectionModel()
+        self.selection.selectionChanged.connect(self.on_row_selected)
 
         self.setCentralWidget(container)
         self.setFixedSize(512, 500)
@@ -147,9 +162,41 @@ class FiestraPrincipal (QMainWindow):
         nombres_columnas = [columna[1] for columna in resultado]
         return nombres_columnas
 
-    def crearFactura(self):
-        factura = Factura()
+    def on_row_selected(self):
 
+        """
+          if not index==[]:
+            self.nAlbaran =self.tableData[index[0].row()][0]
+            self.codigoProducto = self.tableData[index[0].row()][1]
+            self.cantidade =self.tableData[index[0].row()][2]
+            self.precioUnitario = self.tableData[index[0].row()][3]
+            print(self.precioUnitario)
+            self.numeroLalbaran = self.tableData[index[0].row()][4]
+        """
+
+        selected_indexes = self.tablaDetalleAlbara.selectedIndexes()
+
+        selected_rows = set(index.row() for index in selected_indexes)
+
+
+        for row in selected_rows:
+            data = [
+
+                self.tableData[row][0],  # self.nAlbaran
+                self.tableData[row][1],  # self.codigoProducto
+                self.tableData[row][2],  # self.cantidade
+                self.tableData[row][3],  # self.precioUnitario
+                self.tableData[row][4]  # self.numeroLalbaran
+            ]
+            self.selected_data.append(data)
+
+
+
+
+    def crearFactura(self,tituloFactura,nFactura,fecha,fechaEntrega,numeroCliente):
+        nombreArchivo ="FacturaExamen.pdf"
+        factura = Factura(nombreArchivo,tituloFactura,self.nAlbaran,fecha,fechaEntrega,numeroCliente,self.codigoProducto,self.precioUnitario,"0000","0000", self.tableData)
+        print(factura)
 
 
 

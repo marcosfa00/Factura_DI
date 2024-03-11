@@ -74,7 +74,7 @@ class Factura:
         self.elementosDoc.append(tabla)
 
     def total(self):
-        elementos=[
+        elementos = [
             ["","","TOTAL",385]
         ]
         estilo= [

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Factura module &#8212; practicaExamen12-3-24  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to practicaExamen12-3-24’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-Factura">
+<span id="factura-module"></span><h1>Factura module<a class="headerlink" href="#module-Factura" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Factura.Factura">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Factura.</span></span><span class="sig-name descname"><span class="pre">Factura</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nombreArchivo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tituloFactura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nFactura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fecha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fechaEntrega</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeroCliente</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">codigoProducto</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precioUnitario</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeroLFactura</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cliente</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Factura.html#Factura"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Factura.Factura" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Factura.Factura.TituloFactura">
+<span class="sig-name descname"><span class="pre">TituloFactura</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Factura.html#Factura.TituloFactura"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Factura.Factura.TituloFactura" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Factura.Factura.datosFacturacion">
+<span class="sig-name descname"><span class="pre">datosFacturacion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Factura.html#Factura.datosFacturacion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Factura.Factura.datosFacturacion" title="Link to this definition">¶</a></dt>
+<dd><p>Genera una tabla de datos de facturación y la agrega a la lista de elementos del documento.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Factura.Factura.mainTable">
+<span class="sig-name descname"><span class="pre">mainTable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Factura.html#Factura.mainTable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Factura.Factura.mainTable" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="cabeceira">
+<h1>Cabeceira<a class="headerlink" href="#cabeceira" title="Link to this heading">¶</a></h1>
+<p>Para escribir párrafos simplemente escibimos.
+Si queremos remarcar con <strong>negritas</strong> necesitamos ponerlo entre ** dobles. Si queremos ponerlas entre <em>cursivas</em> lo hacemos entre * simples.</p>
+<p>Os distintos niveles de de sección se escriben de la siguiente forma:</p>
+<section id="niveles-secciones">
+<span id="nivelsecciones"></span><h2>Niveles secciones<a class="headerlink" href="#niveles-secciones" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>= para secciones(cabeceras, necesitas mas de 1)</p></li>
+<li><ul>
+<li><p>para subsecciones</p></li>
+</ul>
+</li>
+<li><p>^ para subsubsecciones</p></li>
+<li><p>“ para parrafos</p></li>
+</ul>
+<p>Para poner en negrita en una palabra, Ho<strong>la</strong>aaa (“Ho’' ‘**’la’**’'a”) (pero sin ‘’)</p>
+</section>
+</section>
+<section id="hola">
+<h1>Hola<a class="headerlink" href="#hola" title="Link to this heading">¶</a></h1>
+<section id="haa">
+<h2>Haa<a class="headerlink" href="#haa" title="Link to this heading">¶</a></h2>
+<p>Hello meu</p>
+<section id="fodor">
+<h3>Fodor<a class="headerlink" href="#fodor" title="Link to this heading">¶</a></h3>
+</section>
+</section>
+<section id="listas">
+<h2>Listas<a class="headerlink" href="#listas" title="Link to this heading">¶</a></h2>
+<section id="listas-desordenadas">
+<h3>Listas desordenadas<a class="headerlink" href="#listas-desordenadas" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Elemento1</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Otro subelemento</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Elemento2</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Subelemento</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="listas-ordenadas">
+<h3>Listas ordenadas<a class="headerlink" href="#listas-ordenadas" title="Link to this heading">¶</a></h3>
+<ol class="arabic simple">
+<li><p>Primer elemento</p></li>
+<li><p>Segundo elemento</p></li>
+</ol>
+<blockquote>
+<div><p>2.1. Con subnivel
+2.2 Con otro</p>
+</div></blockquote>
+</section>
+<section id="listas-de-definiciones">
+<h3>Listas de definiciones<a class="headerlink" href="#listas-de-definiciones" title="Link to this heading">¶</a></h3>
+<dl>
+<dt>Término 1</dt><dd><p>Definicion 1</p>
+<p>Definicion 2</p>
+</dd>
+<dt>Siguiente termino</dt><dd><p>Definicion 1</p>
+</dd>
+</dl>
+</section>
+<section id="bloques-literales">
+<h3>Bloques literales<a class="headerlink" href="#bloques-literales" title="Link to this heading">¶</a></h3>
+<p>Despues de un texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hola</span><span class="p">():</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="hipervinculos">
+<h3>Hipervinculos<a class="headerlink" href="#hipervinculos" title="Link to this heading">¶</a></h3>
+<section id="enlaces-externos">
+<h4>Enlaces externos<a class="headerlink" href="#enlaces-externos" title="Link to this heading">¶</a></h4>
+<p>Podemos consultar la documentacion de uso de <a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html">restructuredtext</a> para consultar la ayuda.</p>
+<p>El parrafo tiene un enlace a la pagina principal de <a class="reference external" href="https://www.danielcastelao.org">Daniel Castelao</a>.</p>
+</section>
+<section id="enlaces-internos">
+<h4>Enlaces internos<a class="headerlink" href="#enlaces-internos" title="Link to this heading">¶</a></h4>
+<p>Puedo hacer referencias con una etiqueta colocada arriba con <a class="reference internal" href="#nivelsecciones"><span class="std std-ref">Niveles secciones</span></a>.</p>
+</section>
+</section>
+<section id="taboas">
+<h3>Taboas<a class="headerlink" href="#taboas" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Cabecera</p></th>
+<th class="head"><p>Cabecera2</p></th>
+<th class="head"><p>Cabecera3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Contido</p></td>
+<td><p>Contido2</p></td>
+<td><p>Contido3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Contido1.1</p></td>
+<td><p>Contido2.1</p></td>
+<td><p>Contido3.1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Otra forma más facil</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lunes</p></th>
+<th class="head"><p>Martes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Di</p></td>
+<td><p>Di</p></td>
+</tr>
+<tr class="row-odd"><td><p>Di</p></td>
+<td><p>Di</p></td>
+</tr>
+<tr class="row-even"><td><p>Di</p></td>
+<td><p>Libre</p></td>
+</tr>
+<tr class="row-odd"><td><p>Di</p></td>
+<td><p>Libre</p></td>
+</tr>
+<tr class="row-even"><td><p>Descanso</p></td>
+<td><p>Descanso</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sxe</p></td>
+<td><p>Libre</p></td>
+</tr>
+<tr class="row-even"><td><p>Sxe</p></td>
+<td><p>Libre</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sxe</p></td>
+<td><p>Libre</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="imaxes">
+<h3>Imaxes<a class="headerlink" href="#imaxes" title="Link to this heading">¶</a></h3>
+<a class="reference internal image-reference" href="_images/tablaExamen.png"><img alt="tom baker" class="align-center" src="_images/tablaExamen.png" style="width: 200.0px; height: 200.0px;" /></a>
+<section id="notas-de-pie">
+<h4>Notas de pie:<a class="headerlink" href="#notas-de-pie" title="Link to this heading">¶</a></h4>
+<p>Este texto está realizado con Spinhx <a class="footnote-reference brackets" href="#n1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> para realizar la documentación.</p>
+</section>
+<section id="directivas">
+<h4>Directivas<a class="headerlink" href="#directivas" title="Link to this heading">¶</a></h4>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="n1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Podes encontrar más información en <a class="reference external" href="http://www.sphinx-doc.org">Sphinx</a>.</p>
+</aside>
+</aside>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Este es un mensaje de peligro</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Este es un mensaje de atención</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Este es un mensaje de precaución</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Este es un mensaje importante</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Este es un mensaje de consejo</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">practicaExamen12-3-24</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Factura module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Factura.Factura"><code class="docutils literal notranslate"><span class="pre">Factura</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#cabeceira">Cabeceira</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#niveles-secciones">Niveles secciones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#hola">Hola</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#haa">Haa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listas">Listas</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to practicaExamen12-3-24’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Marcos Fernandez Avendañop.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/Factura.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

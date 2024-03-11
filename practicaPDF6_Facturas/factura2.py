@@ -83,6 +83,7 @@ class Factura2:
         direccion = input("5. Codigo Postal/Ciudad: ")
         fecha = input("6. Fecha de Factura: ")
         print("Datos de facturación ingresados correctamente.")
+
         elementos = [
             ["FACTURAR A:", "", "Nº DE FACTURA", ""],
             ["Cliente:", cliente, "Fecha de Factura:", fecha],
